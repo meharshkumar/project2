@@ -5,7 +5,7 @@ $people=$_POST['people'];
 $date=$_POST['date'];
 $messag=$_POST['message'];
 $mobile="9060295290";
-$message="Name".'$name'."<br>People".'$people'."<br>Date".'date'."messag".'$message'." ";
+$message='$name'.'$people';
 $json = json_decode(file_get_contents("https://smsapi.engineeringtgr.com/send/?Mobile=9060295290&Password=T8924E&Message=".urlencode($message)."&To=".urlencode($mobile)."&Key=harshbMwotGZKDUsAYnmOcFkS0P6"),true);
 if ($json["status"]==="success") {
     echo $json["msg"];
