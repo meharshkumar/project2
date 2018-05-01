@@ -1,14 +1,13 @@
 <?php
 if(isset($_POST['submit'])){
-$name=$_POST['name'];
-$people=$_POST['people'];
-$date=$_POST['date'];
-$messag=$_POST['message'];
-$mobile="9060295290";
-$message=$name.$people;
-$json = json_decode(file_get_contents("https://smsapi.engineeringtgr.com/send/?Mobile=9060295290&Password=T8924E&Message=".urlencode($message)."&To=".urlencode($mobile)."&Key=harshbMwotGZKDUsAYnmOcFkS0P6"),true);
+
+$mobile=7992230085;
+$number=$_POST['name'];
+$mess=$_POST['people'];
+$message=$number.$mess;
+$json = json_decode(file_get_contents("https://smsapi.engineeringtgr.com/send/?Mobile=9060295290&Password=T8924E&Message=".urlencode($message)."&To=".urlencode($mobile)."&Key=harshbMwotGZKDUsAYnmOcFkS0P6") ,true);
 if ($json["status"]==="success") {
-    echo $json["msg"];
+    echo "message has been sent.";
     //your code when send success
 }else{
     echo $json["msg"];
