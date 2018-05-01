@@ -1,21 +1,4 @@
-<?php
-if(isset($_POST['submit'])){
 
-$mobile=7992230085;
-$number=$_POST['name'];
-$mess=$_POST['people'];
-$message=$number.$mess;
-$json = json_decode(file_get_contents("https://smsapi.engineeringtgr.com/send/?Mobile=9060295290&Password=T8924E&Message=".urlencode($message)."&To=".urlencode($mobile)."&Key=harshbMwotGZKDUsAYnmOcFkS0P6") ,true);
-if ($json["status"]==="success") {
-    echo "message has been sent.";
-    //your code when send success
-}else{
-    echo $json["msg"];
-    //your code when not send
-}
-
-}
-?>
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -82,7 +65,7 @@ if ($json["status"]==="success") {
 	<p>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
 	<h5>Catering Service, 42nd Living St, 43043 New York, NY</h5>
 	<p>You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
-	<form action="" method="post">
+	<form action="res.php" method="post">
 		<p>
 		<input type="text" name="name" Placeholder="Name" />
 		</p>
